@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)http://172.16.85.5/assignment/programList.jsp?proNum=1&courseID=46&assignID=20 -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    
+    <meta http-equiv="Expires" content="0"> 
+    <meta http-equiv="Cache-Control" content="no-cache"> 
+    <meta http-equiv="Pragma" content="no-cache"> 
+    <link rel="shortcut icon" href="http://172.16.85.5/images/cgicon.png">
+
+    <title>CourseGrading</title>
+    <script language="javascript">   
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+                history.pushState(null, null, document.URL);
+        });
+    </script>
+    <!-- Bootstrap core CSS -->
+    <link href="./01-Lexical_analysis_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./01-Lexical_analysis_files/docs.min.css" rel="stylesheet">    
+    
+   
+    <link href="./01-Lexical_analysis_files/all.css" rel="stylesheet">
+    <link href="./01-Lexical_analysis_files/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="./01-Lexical_analysis_files/cg_sv2.css" rel="stylesheet">
+    
+    <script src="./01-Lexical_analysis_files/jquery-3.5.1.min.js.download"></script>
+    <script src="./01-Lexical_analysis_files/popper.min.js.download"></script>
+    
+    <script src="./01-Lexical_analysis_files/bootstrap.bundle.min.js.download"></script>
+    <script src="./01-Lexical_analysis_files/docs.min.js.download"></script>
+
+    <link href="./01-Lexical_analysis_files/bootstrap-select.min.css" rel="stylesheet">
+    <script src="./01-Lexical_analysis_files/bootstrap-select.min.js.download"></script>
+  <style>.one-pan-tip { cursor: pointer;}.one-pan-tip::before {background-position: center;background-size: 100% 100%;background-repeat: no-repeat;box-sizing: border-box;width: 1em;height: 1em;margin: 0 1px .15em 1px;vertical-align: middle;display: inline-block;}.one-pan-tip-success::before {content: '';background-image: url(data:image/png;base64,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)}.one-pan-tip-error {text-decoration: line-through;}.one-pan-tip-error::before {content: '';background-image: url(data:image/png;base64,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)}.one-pan-tip-other::before {content: '';background-image: url(data:image/png;base64,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)}.one-pan-tip-lock::before{content: '';background-image: url(data:image/png;base64,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)}</style><meta name="ljjc::status" content="on"></head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    
+    <a class="navbar-brand" href="http://172.16.85.5/index.jsp" one-link-mark="yes"> <img src="./01-Lexical_analysis_files/logo.png" border="0" height="25"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://172.16.85.5/includes/redirect.jsp?tab=0" one-link-mark="yes">首页 <span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://172.16.85.5/includes/redirect.jsp?tab=-1" one-link-mark="yes">课程信息</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://172.16.85.5/includes/redirect.jsp?tab=-2" one-link-mark="yes">在线作业</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://172.16.85.5/includes/redirect.jsp?tab=-3" one-link-mark="yes">在线考试</a>
+            </li>  
+            
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://172.16.85.5/includes/redirect.jsp?tab=-7" one-link-mark="yes">在线实验</a>
+            </li>   
+                
+            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://172.16.85.5/includes/redirect.jsp?tab=-4" one-link-mark="yes">在线答疑</a>
+            </li>    
+            
+            
+                      
+
+                     
+            
+                                   
+
+        </ul>
+       
+        <form class="form-inline my-2 my-lg-0" name="courseForm" method="post" action="http://172.16.85.5/assignment/programList.jsp?proNum=1&amp;courseID=46&amp;assignID=20">
+            
+            
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://172.16.85.5/assignment/programList.jsp?proNum=1&amp;courseID=46&amp;assignID=20#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" one-link-mark="yes">
+                       <i class="fas fa-user"></i>不想写作业</a>
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                      <a class="dropdown-item" href="http://172.16.85.5/includes/redirect.jsp?tab=-6" one-link-mark="yes"><i class="far fa-user"></i>个人信息</a>
+                    <a class="dropdown-item" href="http://172.16.85.5/login/loginproc.jsp?logout=true" one-link-mark="yes"><i class="fas fa-sign-out-alt"></i> 注销</a>
+
+                    </div>
+                </li>
+                <!--
+                <li class="nav-item active">
+                    <a class="nav-link" href="help.jsp" target="_blank"><i class="fas fa-question-circle"></i> 帮助</a>
+                </li>
+                -->
+            </ul>
+            <label for="doChangeCourse" class="sr-only">切换课程</label>
+
+            <input type="hidden" name="doChangeCourse" value="true">
+            <select class="form-control" name="changeCourse" onchange="document.courseForm.submit()">
+              
+              <option value="46" selected="">编译原理</option>
+                    
+            </select>
+            
+            <ul class="navbar-nav mr-auto">
+                
+                <li> <a class="nav-link" href="http://172.16.85.5/sv2/indexexp/contest/index.jsp?my=true&amp;contestCID=46" one-link-mark="yes"><i class="fas fa-medal text-danger"></i> 比赛</a></li>
+                
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="http://172.16.85.5/acm/index.jsp" target="_blank" one-link-mark="yes"><i class="fas fa-code text-danger"></i> OnlineJudge</a>                    
+                </li>
+                
+                
+                    
+                
+               
+               
+                    <a class="nav-link" href="http://172.16.85.5/graduation/index.jsp" one-link-mark="yes"><i class="fa fa-user-graduate text-danger"></i> 毕业设计</a>  
+                
+               
+                
+                <li> <a class="nav-link" href="http://172.16.85.5/sv2/indexexp/pai/publicProjects.jsp" one-link-mark="yes"><i class="fas fa-microscope text-danger"></i> 科研</a></li>
+                
+            </ul>
+            
+        </form>
+  </div>
+</nav>
+  
+
+
+
+
+
+<script language="JavaScript" src="./01-Lexical_analysis_files/common.js.download"></script>
+<script language="JavaScript" src="./01-Lexical_analysis_files/judgeutils.js.download"></script>
+<div class="container-fluid">
+    <div class="row mr-2 ml-1 mt-3">
+        
+        <div class="col-2">
+           
+
+
+
+
+            <h6 class="d-flex justify-content-between align-items-center">
+                <span class="text-muted"><strong><i class="far fa-clock"></i> 当前作业</strong></span>
+                
+            </h6>
+            <div class="list-group list-group-flush mb-4">
+                
+                
+                  
+                        <a href="http://172.16.85.5/assignment/index.jsp?courseID=46&amp;assignID=23" class="list-group-item list-group-item-action" one-link-mark="yes">
+                            <i class="fas fa-angle-double-right"></i> 错误处理和代码生成实验（选做）
+                            
+                        </a>
+                            
+                        
+                  
+                  
+                        <a href="http://172.16.85.5/assignment/index.jsp?courseID=46&amp;assignID=22" class="list-group-item list-group-item-action" one-link-mark="yes">
+                            <i class="fas fa-angle-double-right"></i> 语法分析实验
+                            
+                        </a>
+                            
+                        
+                  
+                  
+                        <a href="http://172.16.85.5/assignment/index.jsp?courseID=46&amp;assignID=20" class="list-group-item list-group-item-action active" one-link-mark="yes">
+                            <i class="fas fa-angle-double-right"></i> 词法分析实验
+                            
+                        </a>
+                            
+                        
+                  
+            </div>
+
+
+            <h6 class="d-flex justify-content-between align-items-center">
+                <span class="text-muted"><strong><i class="fas fa-history"></i> 历史作业</strong></span>                
+            </h6>
+            <div class="list-group list-group-flush">
+                
+                  
+                    <a href="http://172.16.85.5/assignment/index.jsp?courseID=46&amp;assignID=10" class="list-group-item list-group-item-action" one-link-mark="yes">
+                          <i class="fas fa-angle-double-right"></i> 判断句柄
+                          
+                    </a>                                 
+                        
+              
+                  
+                    <a href="http://172.16.85.5/assignment/index.jsp?courseID=46&amp;assignID=4" class="list-group-item list-group-item-action" one-link-mark="yes">
+                          <i class="fas fa-angle-double-right"></i> NFA转DFA DFA最小化
+                          
+                    </a>                                 
+                        
+              
+                
+            </div>
+            
+      
+              
+        </div>
+        <div class="col-10">
+              
+          
+     
+            
+       
+            
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination flex-wrap">
+                      <li class="page-item"><a class="page-link" href="http://172.16.85.5/assignment/index.jsp?assignID=20#An_Program" one-link-mark="yes">
+                              <i class="fas fa-arrow-alt-circle-left"></i> 返回编程题列表</a>
+                      </li>
+
+                      
+                       
+                        <li class="page-item active"><a class="page-link" href="http://172.16.85.5/assignment/programList.jsp?proNum=1&amp;courseID=46&amp;assignID=20" one-link-mark="yes">1</a></li>
+
+                       
+
+                      
+                    </ul>
+                </nav>
+         
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="http://172.16.85.5/assignment/index.jsp?assignID=20" one-link-mark="yes">词法分析实验</a></li>
+                      <li class="breadcrumb-item"><a href="http://172.16.85.5/assignment/index.jsp?assignID=20#An_Program" one-link-mark="yes">编程题</a></li>
+                      <li class="breadcrumb-item active" aria-current="page"><b>1.</b> 实验1：词法分析（2021）</li>
+                    </ol>
+                </nav>
+               
+                <p>【问题描述】</p><p>注：词法分析和语法分析实验都针对此文法，语法分析实验需在词法分析实验的基础上进行增量式开发。</p><p><br></p><p>【文法定义】:</p><p>＜<span style="background-color: #FFFF00;">标识符</span>＞::=＜字母＞｛＜字母＞｜＜数字＞｝&nbsp; &nbsp; &nbsp;//标识符和关键字都不区分大小写，比如if和IF均为关键字，不允许出现与关键字相同的标识符</p><p>＜字母＞::=＿｜a｜．．．｜z｜A｜．．．｜Z&nbsp;&nbsp;</p><p>＜数字＞::=０｜１｜．．．｜９&nbsp;&nbsp;</p><p>＜<span style="background-color: #FFFF00;">整数</span>＞::=［＋｜－］＜无符号整数＞</p><p>＜无符号整数＞::=＜数字＞｛＜数字＞｝</p><p>＜<span style="background-color: #FFFF00;">字符</span>＞::='＜加法运算符＞'｜'＜乘法运算符＞'｜'＜字母＞'｜'＜数字＞'&nbsp;&nbsp;</p><p>＜加法运算符＞::=+｜-&nbsp;</p><p>＜乘法运算符＞::=*｜/&nbsp;</p><p>＜<span style="background-color: #FFFF00;">字符串</span>＞::="｛十进制编码为32,33,35-126的ASCII字符｝"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//字符串中要求至少有一个字符</p><p><br></p><p><img src="./01-Lexical_analysis_files/1633934509538064702.jpg"></p><p>【问题描述】</p><p><span style="white-space:pre"></span>请根据给定的文法设计并实现词法分析程序，从源程序中识别出单词，记录其单词类别和单词值，输入输出及处理要求如下：</p><p>&nbsp; &nbsp;（1）数据结构和与语法分析程序的接口请自行定义；类别码需按下表格式统一定义；</p><p>&nbsp; &nbsp;（2）为了方便进行自动评测，输入的被编译源文件统一命名为<span style="background-color: #FFFFFF; color: #C00000;">testfile.txt（注意不要写错文件名）</span>；输出的结果文件统一命名为<span style="color: #C00000;">output.txt（注意不要写错文件名）</span>，结果文件中每行按如下方式组织：</p><p><span style="white-space:pre"></span>单词类别码 单词的字符/字符串形式(中间仅用一个空格间隔)</p><p><span style="white-space:pre"></span>单词的类别码请统一按如下形式定义：</p><table cellspacing="0" cellpadding="0"><tbody><tr class="firstRow"><td width="73" style="border: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">单词名称</span></p></td><td width="50" style="border-top: 1px solid windowtext; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">类别码</span></p></td><td width="54" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">单词名称</span></p></td><td width="69" style="border-top: 1px solid windowtext; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">类别码</span></p></td><td width="66" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">单词名称</span></p></td><td width="50" style="border-top: 1px solid windowtext; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">类别码</span></p></td><td width="66" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">单词名称</span></p></td><td width="66" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: transparent; padding: 0px 7px;"><p style="text-align:center"><span style="font-size:10px;font-family:宋体;color:#333333">类别码</span></p></td></tr><tr style=";height:8px"><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:   宋体;color:#333333">标识符</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">IDENFR</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">if</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">IFTK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">-</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">MINU</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">=&nbsp;</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;" height="8"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">ASSIGN</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px; word-break: break-all;"><p style="text-align:left"><span style="font-size:10px;font-family:宋体;color:#333333">整数</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">INTCON</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">else</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">ELSETK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">*</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">MULT</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">;</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">SEMICN</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px; word-break: break-all;"><p style="text-align:left"><span style="font-size:10px;font-family:宋体;color:#333333">字符</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">CHARCON</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">do</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">DOTK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">/</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">DIV</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">,</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">COMMA</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:宋体;color:#333333">字符串</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">STRCON</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">while</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">WHILETK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">&lt;&nbsp;</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">LSS</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">(</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">LPARENT</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">const</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">CONSTTK</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">for</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">FORTK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">&lt;=</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">LEQ</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">)</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">RPARENT</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">int</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">INTTK</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">scanf</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">SCANFTK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">&gt;&nbsp;</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">GRE</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">[</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">LBRACK</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">char</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">CHARTK</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">printf</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">PRINTFTK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">&gt;=</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">GEQ</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">]</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">RBRACK</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">void</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">VOIDTK</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">return</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">RETURNTK</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">==&nbsp;</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">EQL</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">{</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">LBRACE</span></p></td></tr><tr><td width="73" valign="top" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">main</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">MAINTK</span></p></td><td width="54" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">+</span></p></td><td width="69" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">PLUS</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">!=&nbsp;</span></p></td><td width="50" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 2px double windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">NEQ</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">}</span></p></td><td width="66" valign="top" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; background: transparent; padding: 0px 7px;"><p style="text-align:left"><span style="font-size:10px;font-family:&#39;Helvetica&#39;,sans-serif;color:#333333">RBRACE</span></p></td></tr></tbody></table><p><br></p><p>【输入形式】testfile.txt中的符合文法要求的测试程序。<br>【输出形式】要求将词法分析结果输出至output.txt中。</p><p>【特别提醒】</p><p>（1）读取的字符串要原样保留着便于输出，特别是数字，这里输出的并不是真正的单词值，其实是读入的字符串，单词值需另行记录。</p><p>（2）本次作业只考核对正确程序的处理，但需要为今后可能出现的错误情况预留接口。</p><p>（3）在今后的错误处理作业中，需要输出错误的行号，在词法分析的时候注意记录该信息。</p><p>（4）单词的类别和单词值以及其他关注的信息，在词法分析阶段获取后，后续的分析阶段会使用，请注意记录；当前要求的输出只是为了便于评测，完成编译器中无需出现这些信息，请设计为方便打开/关闭这些输出的方案。</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; word-break: break-all; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(245, 245, 245);"><span style="font-family: sans-serif; font-size: 16px;">【样例输入】</span><br></p><pre class="brush:cpp;toolbar:false">const&nbsp;int&nbsp;const1&nbsp;=&nbsp;1,&nbsp;const2&nbsp;=&nbsp;-100;
+const&nbsp;char&nbsp;const3&nbsp;=&nbsp;'_';
+int&nbsp;change1;
+char&nbsp;change3;
+int&nbsp;gets1(int&nbsp;var1,int&nbsp;var2){
+&nbsp;&nbsp;&nbsp;&nbsp;change1&nbsp;=&nbsp;var1&nbsp;+&nbsp;var2;
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(change1);
+}
+void&nbsp;main(){
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Hello&nbsp;World");
+&nbsp;&nbsp;&nbsp;&nbsp;printf(gets1(10,&nbsp;20));
+}</pre><p>【样例输出】</p><pre class="brush:cpp;toolbar:false">CONSTTK&nbsp;const
+INTTK&nbsp;int
+IDENFR&nbsp;const1
+ASSIGN&nbsp;=
+INTCON&nbsp;1
+COMMA&nbsp;,
+IDENFR&nbsp;const2
+ASSIGN&nbsp;=
+MINU&nbsp;-
+INTCON&nbsp;100
+SEMICN&nbsp;;
+CONSTTK&nbsp;const
+CHARTK&nbsp;char
+IDENFR&nbsp;const3
+ASSIGN&nbsp;=
+CHARCON&nbsp;_
+SEMICN&nbsp;;
+INTTK&nbsp;int
+IDENFR&nbsp;change1
+SEMICN&nbsp;;
+CHARTK&nbsp;char
+IDENFR&nbsp;change3
+SEMICN&nbsp;;
+INTTK&nbsp;int
+IDENFR&nbsp;gets1
+LPARENT&nbsp;(
+INTTK&nbsp;int
+IDENFR&nbsp;var1
+COMMA&nbsp;,
+INTTK&nbsp;int
+IDENFR&nbsp;var2
+RPARENT&nbsp;)
+LBRACE&nbsp;{
+IDENFR&nbsp;change1
+ASSIGN&nbsp;=
+IDENFR&nbsp;var1
+PLUS&nbsp;+
+IDENFR&nbsp;var2
+SEMICN&nbsp;;
+RETURNTK&nbsp;return
+LPARENT&nbsp;(
+IDENFR&nbsp;change1
+RPARENT&nbsp;)
+SEMICN&nbsp;;
+RBRACE&nbsp;}
+VOIDTK&nbsp;void
+MAINTK&nbsp;main
+LPARENT&nbsp;(
+RPARENT&nbsp;)
+LBRACE&nbsp;{
+PRINTFTK&nbsp;printf
+LPARENT&nbsp;(
+STRCON&nbsp;Hello&nbsp;World
+RPARENT&nbsp;)
+SEMICN&nbsp;;
+PRINTFTK&nbsp;printf
+LPARENT&nbsp;(
+IDENFR&nbsp;gets1
+LPARENT&nbsp;(
+INTCON&nbsp;10
+COMMA&nbsp;,
+INTCON&nbsp;20
+RPARENT&nbsp;)
+RPARENT&nbsp;)
+SEMICN&nbsp;;
+RBRACE&nbsp;}</pre><p>【评分标准】 按与预期结果不一致的项数（每一行单词信息算一项）扣分，每项扣1%。<br></p><p>【参考资料】</p><p style="line-height: 16px;"><img style="vertical-align: middle; margin-right: 2px;" src="./01-Lexical_analysis_files/icon_doc.gif"><a style="font-size:12px; color:#0066cc;" href="http://172.16.85.5/userfiles/file/2021/1634000464048013337.doc" title="pl0-compiler.doc" one-link-mark="yes">pl0-compiler.doc</a>&nbsp;中getsym及相关子程序（过程）</p><p style="line-height: 16px;"><img style="vertical-align: middle; margin-right: 2px;" src="./01-Lexical_analysis_files/icon_doc.gif"><a style="font-size:12px; color:#0066cc;" href="http://172.16.85.5/userfiles/file/2021/1634000479128086838.docx" title="pascal-compiler.docx" one-link-mark="yes">pascal-compiler.docx</a>&nbsp;中insymbol及相关子程序（过程）</p><p style="line-height: 16px;">【开发语言及环境】 支持C/C++（支持C++11标准） ，java，python，Go。Clang，Clang++。推荐使用C/C++。</p><p style="line-height: 16px;">【提交形式】将所开发的词法分析程序的源文件（.cpp/.c/.h，不含工程文件）打包为zip或rar后提交（注意在MAC下压缩会产生额外的文件到压缩包中，需删掉额外文件后提交）</p>    
+           
+                <hr>
+               
+						
+                
+
+                <script type="text/javascript" language="javascript">
+                var datenow = new Date();
+                var submitStartTime = datenow.getTime();
+
+                function filesubmit() {	
+
+                        var boolSelected=false;
+                        var sValue="";
+                        var mainClass="";
+                        var appendUrl="";
+                        var uAction="";
+                        var programLan="c";
+
+                        var filename = document.upload.FILE1.value;
+
+                        if(filename.length<1) {
+                                alert("请输入要提交的文件!");
+                                return false;
+                        }   
+
+                        if(!isIeLessThan9()) {
+
+                            var maxFileSize = 8388608;
+                            var uploadFileObj = document.getElementById("CGFILE").files[0];
+
+                            if(uploadFileObj.size > maxFileSize) {
+                                alert("上传的源文件大小不能超过 8192 KB !" );
+                                return false;
+                            }
+                        }
+
+                        document.upload.action = "showProcessMsg.jsp?problemID=3969&assignID=20&doSubmit=true&progLanguage=c";
+
+                        
+
+
+                        
+                                for (var i=0; i<document.lanparamFORM.progLanguage.options.length; ++i){
+                                        if (document.lanparamFORM.progLanguage.options[i].selected){
+                                                sValue=document.lanparamFORM.progLanguage.options[i].text;
+                                        boolSelected= true;
+
+                                        appendUrl="progLanguage="+ encodeURIComponent(sValue);
+                                        break;
+                                }		
+                                }
+                                programLan=sValue;
+                                if(sValue=="java"){
+                                        mainClass=document.lanparamFORM.javaMainCLass.value;
+                                        if(mainClass==""){
+                                                alert("请填写主类名");
+                                                return false;
+                                        }else{
+                                                appendUrl=appendUrl+"&javaMainCLass="+mainClass;
+                                        }
+
+                                }
+
+                                if(!boolSelected){    			
+                                        alert("请选择编程语言");
+                                        return false;
+                                }
+
+                                document.upload.action="showProcessMsg.jsp?problemID=3969&assignID=20&doSubmit=true&"+appendUrl;
+
+                        
+
+                        var fileExtentRegxs = new Array();
+                        
+                        fileExtentRegxs['nasm-64-libc']=['.asm'];
+                        
+                        fileExtentRegxs['nasm-64']=['.asm'];
+                        
+                        fileExtentRegxs['clang++']=['.cpp','.cc','.C','.cxx','.CPP','.zip','.rar'];
+                        
+                        fileExtentRegxs['c']=['.c','.zip','.rar'];
+                        
+                        fileExtentRegxs['gnuPascal']=['.pas','.zip','.rar'];
+                        
+                        fileExtentRegxs['freePascal']=['.pas','.pp','.zip','.rar'];
+                        
+                        fileExtentRegxs['nasm-32-libc']=['.asm'];
+                        
+                        fileExtentRegxs['scala']=['.scala'];
+                        
+                        fileExtentRegxs['python']=['.py','.zip','.rar'];
+                        
+                        fileExtentRegxs['mars']=['.asm'];
+                        
+                        fileExtentRegxs['ise']=['.zip','.v'];
+                        
+                        fileExtentRegxs['mpicxx']=['.cpp','.cc','.C','.cxx','.zip','.rar'];
+                        
+                        fileExtentRegxs['r']=['.R'];
+                        
+                        fileExtentRegxs['logisim']=['.circ'];
+                        
+                        fileExtentRegxs['c++']=['.cpp','.cc','.C','.cxx','.CPP','.zip','.rar'];
+                        
+                        fileExtentRegxs['fortran95']=['.f','.for','.FOR','.F','.fpp','.FPP','.zip','.rar'];
+                        
+                        fileExtentRegxs['clang']=['.c','.zip','.rar'];
+                        
+                        fileExtentRegxs['c#']=['.cs','.zip','.rar'];
+                        
+                        fileExtentRegxs['java']=['.java','.zip','.rar'];
+                        
+                        fileExtentRegxs['matlab']=['.m'];
+                        
+                        fileExtentRegxs['mpicc']=['.c','.zip','.rar'];
+                        
+                        fileExtentRegxs['nasm-32']=['.asm'];
+                        
+                        fileExtentRegxs['fortran77']=['.f','.for','.FOR','.F','.fpp','.FPP','.zip','.rar'];
+                        
+                        fileExtentRegxs['go']=['.go'];
+                    
+
+                        var fileExtents = new Array();
+                        
+                        fileExtents['nasm-64-libc']=".asm";
+                        
+                        fileExtents['nasm-64']=".asm";
+                        
+                        fileExtents['clang++']=".cpp， .cc， .C， .cxx， .CPP";
+                        
+                        fileExtents['c']=".c";
+                        
+                        fileExtents['gnuPascal']=".pas";
+                        
+                        fileExtents['freePascal']=".pas， .pp";
+                        
+                        fileExtents['git']=".gitproj";
+                        
+                        fileExtents['nasm-32-libc']=".asm";
+                        
+                        fileExtents['scala']=".scala";
+                        
+                        fileExtents['python']=".py";
+                        
+                        fileExtents['mars']=".asm";
+                        
+                        fileExtents['ise']=".zip， .v";
+                        
+                        fileExtents['mpicxx']=".cpp， .cc， .C， .cxx";
+                        
+                        fileExtents['r']=".R";
+                        
+                        fileExtents['logisim']=".circ";
+                        
+                        fileExtents['c++']=".cpp， .cc， .C， .cxx， .CPP";
+                        
+                        fileExtents['fortran95']=".f， .for， .FOR， .F， .fpp， .FPP";
+                        
+                        fileExtents['gitlab']=".zip";
+                        
+                        fileExtents['clang']=".c";
+                        
+                        fileExtents['c#']=".cs";
+                        
+                        fileExtents['java']=".java";
+                        
+                        fileExtents['matlab']=".m";
+                        
+                        fileExtents['mpicc']=".c";
+                        
+                        fileExtents['nasm-32']=".asm";
+                        
+                        fileExtents['fortran77']=".f， .for， .FOR， .F， .fpp， .FPP";
+                        
+                        fileExtents['go']=".go";
+                    
+
+                        if(!CGHasExtension(filename, fileExtentRegxs[programLan])) {
+                            alert("文件格式不对，源文件后缀仅限于：" + fileExtents[programLan]);
+                            return false;
+                        }   
+
+                        var now = new Date();       
+                        var submitTimeSpent = Math.floor((now.getTime() - submitStartTime) / 1000);        
+                        submitStartTime = now.getTime();
+                        var requestString = document.upload.action;               
+                        document.upload.action = requestString + "&wtime=" + submitTimeSpent;   
+
+                        document.getElementById("Submit").disabled=true;
+                        document.getElementById("Submit").value="正在处理...";
+
+                        cgShowProcessLoading('showmessageFrame');
+                        return true;
+                }
+
+                function mainClassInput() {
+                    var sValue="";
+                    for (var i=0; i<document.lanparamFORM.progLanguage.options.length; ++i){
+                                    if (document.lanparamFORM.progLanguage.options[i].selected){
+                                    sValue=document.lanparamFORM.progLanguage.options[i].text;
+                                    break;
+                            }
+                    }
+
+                    if(sValue=="java"){
+                            document.getElementById('mainclassObj').style.display='inline';
+                    }else{
+                            document.getElementById('mainclassObj').style.display='none';
+                    }
+                }
+                </script>
+						
+                <form class="form-inline mb-3" name="lanparamFORM" method="get">
+                   
+                                                 
+                          
+                            <label for="languages" class="mr-2">编程语言</label>
+
+                            <select class="form-control" name="progLanguage" id="languages" onchange="mainClassInput();">
+                             
+                                     <option value="c">c</option>
+                             
+                                     <option value="c++">c++</option>
+                             
+                                     <option value="java">java</option>
+                             
+                                     <option value="python">python</option>
+                             
+                                     <option value="go">go</option>
+                             
+                                     <option value="clang">clang</option>
+                             
+                                     <option value="clang++">clang++</option>
+                             
+                             </select>                               
+                               
+                        
+
+                           
+                        <div style="display:none;" id="mainclassObj">  
+                            <div class="input-group ml-2">
+                                
+                                <input type="text" class="form-control" id="javamanclass" placeholder="填写主类名" name="javaMainCLass" value="">
+                                <div class="input-group-append">
+                                  <div class="input-group-text">如果带有包名，格式为：<kbd>包名.主类名</kbd> <a href="http://172.16.85.5/help/javamainclass.jsp" class="ml-1" target="_blank" one-link-mark="yes">查看帮助</a></div>
+                                </div>                           
+                            </div>
+                        </div>                              
+               
+                </form>   
+                                
+                <form class="form-inline" name="upload" onsubmit="return filesubmit();" method="post" enctype="multipart/form-data" target="showmessage" action="http://172.16.85.5/assignment/programList.jsp?proNum=1&amp;courseID=46&amp;assignID=20">
+                     <div class="form-group">
+                         <label for="CGFILE" class="my-1 mr-3">提交源文件</label>
+                         <input type="file" name="FILE1" id="CGFILE" required="">
+                         <input id="Submit" type="submit" name="Submit" class="btn btn-success btn-sm" value="提 交">     
+                     </div>   
+                </form>
+                 <small id="emailHelp" class="form-text text-muted">                        
+                    
+                    如果有多个源文件，压缩成 <code>rar 或者 zip </code>包提交。如果用Python多源文件，包内必须包含<code>__main__.py</code>文件。                     
+                 </small>           
+                            
+                <div class="card">
+                    <div class="card-header">
+                      运行结果
+                    </div>
+                    <div class="card-body">
+                        
+                        <iframe id="showmessageFrame" name="showmessage" src="./01-Lexical_analysis_files/showProcessMsg.html" frameborder="0" height="280" marginheight="0" marginwidth="0" width="100%"></iframe>
+                    </div>
+                </div>     
+                   
+                    
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination flex-wrap">
+                      <li class="page-item"><a class="page-link" href="http://172.16.85.5/assignment/index.jsp?assignID=20#An_Program" one-link-mark="yes">
+                              <i class="fas fa-arrow-alt-circle-left"></i> 返回编程题列表</a>
+                      </li>
+
+                      
+                       
+                        <li class="page-item active"><a class="page-link" href="http://172.16.85.5/assignment/programList.jsp?proNum=1&amp;courseID=46&amp;assignID=20" one-link-mark="yes">1</a></li>
+
+                       
+
+                      
+                    </ul>
+                </nav>
+        
+                  
+       
+
+            
+        </div>
+    </div>
+</div>
+
+
+        
+     
+   
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <iframe src="./01-Lexical_analysis_files/stayalive.html" frameborder="0" height="0" marginheight="0" marginwidth="0" width="0"></iframe>
+    
+    <footer id="cgfooter" style="min-height: 70px; width: 100%; padding: 15px;position: relative;bottom: 0;" class="bg-light mt-5">
+      <div class="container text-center">
+       
+              CourseGrading
+      </div>
+    </footer>
+    
+  
+  
+
+ 
+</body></html>
