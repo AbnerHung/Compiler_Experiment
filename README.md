@@ -3,7 +3,7 @@ Lexical analysis and grammatical analysis experiment
 
 两个实验的说明：
 [词法分析](01-Lexical_analysis.md)
-[语法分析](02-Grammatical_analysis.html)
+[语法分析](02-Grammatical_analysis.md)
 
 写得很随便的代码：
 [main](main.cpp)
