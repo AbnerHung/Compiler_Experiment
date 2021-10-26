@@ -1,2 +1,2 @@
 # Compiler_Experiment
-Syntactic analysis and semantic analysis experiment
+Lexical analysis and grammatical analysis experiment
