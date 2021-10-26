@@ -1,6 +1,8 @@
 # Compiler_Experiment
 Lexical analysis and grammatical analysis experiment
 
+[词法分析](01-Lexical_analysis.md)
+
 可优化的地方
 - 将词法分析多分支的if换成switch
 - 将语法分析中多次重复的语句封装成函数
