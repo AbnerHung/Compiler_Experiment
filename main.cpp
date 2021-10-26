@@ -96,7 +96,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 				fprintf( fp, "%s%s\n", "STRCON", TOKEN );
@@ -186,7 +186,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    	       	    fclose(in);
 					return(1);
 				}
 				if ( CHAR == '=' )
@@ -197,7 +197,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -208,7 +208,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -219,7 +219,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -230,7 +230,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -241,7 +241,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    	     	    fclose(in);
 					return(1);
 				}
 			}
@@ -252,7 +252,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -263,7 +263,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -274,7 +274,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -285,7 +285,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -296,7 +296,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -308,7 +308,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -320,7 +320,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
@@ -331,7 +331,7 @@ int lex() {
 				if ( (CHAR = fgetc( in ) ) == EOF )
 				{
 				    fclose(fp);
-                    fclose(in);
+                    		    fclose(in);
 					return(1);
 				}
 			}
