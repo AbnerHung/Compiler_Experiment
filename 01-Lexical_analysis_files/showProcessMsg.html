@@ -1,0 +1,51 @@
+
+<!-- saved from url=(0072)http://172.16.85.5/assignment/longtimerun.jsp?assignID=20&problemID=3969 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title></title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<script src="./jquery-1.3.2.min.js.download" type="text/javascript"></script>
+      
+ <script src="./ajax.js.download" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+   function cb() {
+       var html = "<a href=\"programPerf/judgeReport.jsp?assignID=20&problemID=3969&userID=218\" target=\"_blank\"><b>性能排行榜 &raquo;</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"judgeDetailsRedirect.jsp?assignID=20&problemID=3969&userID=218\" target=\"_blank\"><b>详细评判结果 &raquo;</b></a>";
+       $("#morediv").html(html);
+       
+        parent.document.getElementById("Submit").disabled=false;
+        parent.document.getElementById("Submit").value="提 交"; 
+  
+   }
+   
+    $(document).ready(function(){
+
+        ajaxGetURL("result", "longtimerunJSON.jsp?assignID=20&problemID=3969", cb);
+    });
+    
+</script>
+</head>
+<body bgcolor="#FFFFFF" marginwidth="0" marginheight="0">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+ <tbody><tr> 
+ <td height="100%">
+    
+        <a href="http://172.16.85.5/downloadFile?filename=Dgv1fq2mP7nvb0NPuJ5cSlQI-VlL8YqchfBQFmSSa-SlWa6zGPyTIRByCfuS0moPY1k0IS-fXIE30VSf4eisWiv_J4hzKxuE">下载源文件</a>
+        <hr>
+        
+    
+     <div id="result"><font color="#3366CC">得分100.00&nbsp;&nbsp;&nbsp;最后一次提交时间:2021-10-25 21:51:39</font><br><br>共有测试数据:5<br>平均占用内存:1.309K&nbsp;&nbsp;&nbsp;&nbsp;平均CPU时间:0.00409S&nbsp;&nbsp;&nbsp;&nbsp;平均墙钟时间:0.00408S<br><br><table border="0" cellpadding="0" cellspacing="0" width="400"><tbody><tr><td><b>测试数据</b></td><td><b>评判结果</b></td></tr><tr><td>测试数据1</td><td>完全正确</td></tr><tr><td>测试数据2</td><td>完全正确</td></tr><tr><td>测试数据3</td><td>完全正确</td></tr><tr><td>测试数据4</td><td>完全正确</td></tr><tr><td>测试数据5</td><td>完全正确</td></tr></tbody></table></div>
+ 	
+ </td>
+ </tr>
+
+ <tr>
+     <td align="center">
+         <div id="morediv"><a href="http://172.16.85.5/assignment/programPerf/judgeReport.jsp?assignID=20&amp;problemID=3969&amp;userID=218" target="_blank"><b>性能排行榜 &#187;</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://172.16.85.5/assignment/judgeDetailsRedirect.jsp?assignID=20&amp;problemID=3969&amp;userID=218" target="_blank"><b>详细评判结果 &#187;</b></a></div>
+         <br>         
+     </td>
+ </tr>
+
+</tbody></table>
+
+
+</body></html>
